@@ -1,7 +1,29 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
 <body>
-<h1>Hello World</h1>
-<!-- <p>I'm hosted with GitHub Pages.</p> -->
+    <h1 id="greet"">Hello World!</h1>
+    <h3>
+        <p style=" margin-left: 10pt"><a href="games.html">Games</a></p>
+        <p style=" margin-left: 10pt"><a href="contacts.html">Contact me</a></p>
+        </h3>
 </body>
+
 </html>
+
+<script>
+    function supportsEmoji() {
+        const ctx = document.createElement("canvas").getContext("2d");
+        ctx.canvas.width = ctx.canvas.height = 1;
+        ctx.fillText("😗", -4, 4);
+        return ctx.getImageData(0, 0, 1, 1).data[3] > 0; // Not a transparent pixel
+    }
+
+    if (supportsEmoji()) {
+        document.getElementById("greet").innerHTML = "Hello &#127757;!";
+    }
+</script>
