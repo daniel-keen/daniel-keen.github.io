@@ -1,0 +1,26 @@
+<a href="/">&lt; Go Back</a>
+<div>
+	<p>Welcome to the support page.</p>
+
+	<p>
+		If you're experiencing any issues or have any questions about my apps, you can contact me using
+		the information below.
+	</p>
+
+	<p>Contact Information:</p>
+
+	<ul>
+		<li>Name: Daniel Keen</li>
+		<li>Email: <a href="mailto:real.daniel.keen@gmail.com">real.daniel.keen@gmail.com</a></li>
+		<li>Twitter: <a href="https://twitter.com/the_daniel_keen">@the_Daniel_Keen</a></li>
+	</ul>
+
+	<p>I strive to respond to all support inquiries within 24 hours.</p>
+
+	<p>
+		Please be sure to include as much detail as possible about your issue or question so that I can
+		help you as quickly and effectively as possible.
+	</p>
+
+	<p>Have a good day!</p>
+</div>
