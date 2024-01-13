@@ -1,31 +1,62 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <title>Supa Dupa</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/pico/pico.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <script src="https://kit.fontawesome.com/c7e4d56451.js" crossorigin="anonymous"></script>
+    <title>Daniel Keen</title>
 </head>
 
 <body>
-    <h1 id="greet"">Hello World!</h1>
-    <h3>
-        <p style=" margin-left: 10pt"><a href="games/index.html">Games</a></p>
-        <p style=" margin-left: 10pt"><a href="apps/index.html">Apps</a></p>
-        <p style=" margin-left: 10pt"><a href="contacts.html">Contact me</a></p>
-        </h3>
+    <div class="bg-image">
+        <!-- <img src="assets/images/logo.png" /> -->
+    </div>
+    <main class="container">
+        <nav>
+            <ul>
+                <li><img class="logo" src="assets/images/logo.png" /></li>
+            </ul>
+            <ul>
+                <li><strong>Daniel Keen</strong></li>
+            </ul>
+            <ul>
+                <li><a class="fa-brands fa-x-twitter contrast" target="_blank" rel="noopener noreferrer"
+                        href="https://twitter.com/the_daniel_keen"></a></li>
+                <li><a class="fa-brands fa-github contrast" target="_blank" rel="noopener noreferrer"
+                        href="https://github.com/daniel-keen"></a></li>
+                <li><a class="fa-brands fa-linkedin contrast" target="_blank" rel="noopener noreferrer"
+                        href="https://www.linkedin.com/in/daniel-nadkin/"></a></li>
+                <li><a class="fa-brands fa-spotify contrast" target="_blank" rel="noopener noreferrer"
+                        href="https://open.spotify.com/artist/3qe75mgWNfGDJZTrAy70CJ"></a></li>
+                <li><a class="fa-brands fa-instagram contrast" target="_blank" rel="noopener noreferrer"
+                        href="https://www.instagram.com/quacking_of_the_ducks/"></a></li>
+            </ul>
+        </nav>
+
+        <article>
+            <header class="content-center">
+                I love art & my wife.
+            </header>
+
+            <div class="grid menu">
+                <div><a href="#" role="button" class="games"><i class="fa-solid fa-gamepad fa-2x"></i>
+                        Games</a></div>
+                <div><a href="#" role="button" class="apps"><i class="fa-brands fa-app-store-ios fa-2x"></i> Apps</a>
+                </div>
+                <div><a href="https://open.spotify.com/artist/3qe75mgWNfGDJZTrAy70CJ" target="_blank" role="button"
+                        class="music"><i class="fa-brands fa-spotify fa-2x"></i> Music</a></div>
+                <div><a href="https://www.instagram.com/quacking_of_the_ducks" target="_blank" role="button"
+                        class="drawings"><i class="fa-brands fa-instagram fa-2x"></i>
+                        Drawings</a></div>
+            </div>
+
+            <footer>Feel free to contact me at <a href="mailto:info@danielkeen.xyz">info@danielkeen.xyz</a>.</footer>
+        </article>
+    </main>
 </body>
 
 </html>
-
-<script>
-    function supportsEmoji() {
-        const ctx = document.createElement("canvas").getContext("2d");
-        ctx.canvas.width = ctx.canvas.height = 1;
-        ctx.fillText("😗", -4, 4);
-        return ctx.getImageData(0, 0, 1, 1).data[3] > 0; // Not a transparent pixel
-    }
-
-    if (supportsEmoji()) {
-        document.getElementById("greet").innerHTML = "Hello &#127757;!";
-    }
-</script>

@@ -1,0 +1,32 @@
+.logo {
+    width: 30pt;
+    height: 30pt;
+    border-radius: 100%;
+    border-width: 1pt;
+    border-color: white;
+    border-style: solid;
+}
+
+footer {
+    text-align: center;
+}
+
+.bg-image {
+    /* position: absolute;
+    filter: blur(0px);
+
+    z-index:-100;
+    
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+
+    height: 100%;
+    width: 100%; */
+
+    /* Center and scale the image nicely */
+    /* background-position: center; */
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+}
