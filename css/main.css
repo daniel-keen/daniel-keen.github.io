@@ -1,3 +1,11 @@
+footer {
+    text-align: center;
+}
+
+a[role=button] i {
+    margin-right: 0.2em;
+}
+
 .logo {
     width: 30pt;
     height: 30pt;
@@ -7,6 +15,10 @@
     border-style: solid;
 }
 
-footer {
+.float-left {
+    float: left;
+}
+
+.text-align-center {
     text-align: center;
 }
