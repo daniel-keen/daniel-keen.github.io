@@ -1,0 +1,12 @@
+.logo {
+  width: 30pt;
+  height: 30pt;
+  border-radius: 50%;
+  border-width: 1px;
+  border-color: white;
+  border-style: solid;
+}
+
+.logo:hover {
+  box-shadow: 0 0 15px white;
+}
