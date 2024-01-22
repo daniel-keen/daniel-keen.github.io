@@ -3,7 +3,7 @@ import type { Product } from '../ProductType';
 import type { ProductState } from './ProductState';
 import { generateProduct } from '../GenerateProduct';
 
-const BasePath = '/public/assets/products/apps';
+const BasePath = '/public/products/apps';
 
 const products: Product[] = [
   generateProduct('meme-locker', 

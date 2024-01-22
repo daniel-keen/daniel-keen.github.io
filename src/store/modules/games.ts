@@ -3,7 +3,7 @@ import type { Product } from '../ProductType';
 import type { ProductState } from './ProductState';
 import { generateProduct } from '../GenerateProduct';
 
-const BasePath = '/public/assets/products/games';
+const BasePath = '/public/products/games';
 
 const products: Product[] = [
   generateProduct('block-line-up', 
