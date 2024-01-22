@@ -8,7 +8,7 @@ const props = defineProps({
   <Transition name="modal">
     <dialog v-if="show" class="modal-mask">
       <article>
-        <a href="#" aria-label="Close" class="close" @click="$emit('close')"></a>
+        <button aria-label="Close" class="close" @click="$emit('close')"></button>
         <header>
             <slot name="header">default header</slot>
           </header>
@@ -44,6 +44,8 @@ article {
   display: flex;
   position: absolute;
   align-self: flex-end;
+  background-color: transparent;
+  border: none;
 }
 
 .modal-enter-from {
