@@ -5,6 +5,8 @@ import type { Product } from '@/store/ProductType'
 import { useGamesStore } from '@/store/index'
 import { onMounted } from 'vue'
 import { useRoute } from 'vue-router'
+import Modal from './ModalView.vue'
+import { ref } from 'vue'
 
 const gamesStore = useGamesStore()
 const route = useRoute()
@@ -13,9 +15,25 @@ const game: Product | undefined = games.find((g) => g.id === route.params.gameId
 const screenshotPath = (index: number) =>
   new URL(`../assets/images/games/${game?.id}/screenshot-${index}.png`, import.meta.url).toString()
 
-onMounted(() => {
-  console.log(screenshotPath(0))
+const fileContent = ref<string>('')
+
+const parseFile = async (filePath: string): Promise<void> => {
+  try {
+    const fetchResponse = await fetch(filePath)
+    const content = await fetchResponse.text()
+    fileContent.value = content
+  } catch (ex) {
+    console.log('Error in fetch. ' + ex)
+  }
+}
+
+onMounted(async () => {
+  if (game?.privacyPolicy) {
+    await parseFile(game.privacyPolicy)
+  }
 })
+
+const showModal = ref(false)
 </script>
 
 <template>
@@ -28,32 +46,41 @@ onMounted(() => {
         </ul>
       </nav>
     </header>
-    <article>
-      <hgroup>
-        <h2>{{ game?.title }}</h2>
-        <p>{{ game?.shortDescription }}</p>
-      </hgroup>
+    <hgroup>
+      <h2>{{ game?.title }}</h2>
+      <p>{{ game?.shortDescription }}</p>
+    </hgroup>
 
-      <img class="thumbnail float-left" :src="game?.thumbnail" />
+    <img class="thumbnail float-left" :src="game?.thumbnail" />
 
-      <p>{{ game?.longDescription }}</p>
+    <p>{{ game?.longDescription }}</p>
 
-      <blockquote>
-        <!-- <a class="secondary" data-target="modal-example" @click="toggleModal">Privacy Policy</a> -->
-      </blockquote>
+    <blockquote>
+      <AppLink to="#privacy-policy" id="show-modal" @click="showModal = true"
+        >Privacy Policy</AppLink
+      >
 
-      <div class="screenshots">
-        <img v-for="index in 3" :key="index" :src="screenshotPath(index)" />
-      </div>
+      <Teleport to="body">
+        <modal :show="showModal" @close="showModal = false">
+          <template #header> {{ game?.title }}: Privacy Policy </template>
+          <template #body>
+            <p style="white-space: pre-wrap">{{ fileContent }}</p>
+          </template>
+        </modal>
+      </Teleport>
+    </blockquote>
 
-      <div class="store-buttons">
-        <AppLink to="" target="_blank" role="button" class="primary">
-          <font-awesome-icon class="store-button" :icon="['fab', 'app-store-ios']" /> App Store
-        </AppLink>
-        <a href="" target="_blank" role="button" class="primary">
-          <font-awesome-icon class="store-button" :icon="['fab', 'google-play']" /> Google Play
-        </a>
-      </div>
-    </article>
+    <div class="screenshots">
+      <img v-for="index in 3" :key="index" :src="screenshotPath(index)" />
+    </div>
+
+    <div class="store-buttons">
+      <AppLink to="" target="_blank" role="button" class="primary">
+        <font-awesome-icon class="store-button" :icon="['fab', 'app-store-ios']" /> App Store
+      </AppLink>
+      <a href="" target="_blank" role="button" class="primary">
+        <font-awesome-icon class="store-button" :icon="['fab', 'google-play']" /> Google Play
+      </a>
+    </div>
   </article>
 </template>
