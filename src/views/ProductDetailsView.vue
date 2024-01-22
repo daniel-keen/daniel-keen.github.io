@@ -40,8 +40,10 @@ watch(
   () => showModal.value,
   (newValue) => {
     if (newValue) {
+      router.replace({ query: { 'privacy-policy': null } })
       document.body.classList.add('stop-scrolling')
     } else {
+      router.replace({ query: undefined })
       document.body.classList.remove('stop-scrolling')
     }
   }
@@ -68,9 +70,7 @@ watch(
     <p>{{ longDescriptionText }}</p>
 
     <blockquote>
-      <AppLink to="?privacy-policy" id="show-modal" @click="showModal = true"
-        >Privacy Policy</AppLink
-      >
+      <AppLink to="" id="show-modal" @click="showModal = true">Privacy Policy</AppLink>
 
       <Teleport to="body">
         <modal :show="showModal" @close="showModal = false">
