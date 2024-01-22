@@ -55,7 +55,9 @@ watch(
     <header>
       <nav aria-label="breadcrumb">
         <ul>
-          <li><AppLink to="/games">Games</AppLink></li>
+          <li>
+            <AppLink :to="router.options.history.state.back"> {{ store.title }}</AppLink>
+          </li>
           <li>{{ product?.title }}</li>
         </ul>
       </nav>

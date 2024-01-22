@@ -16,6 +16,7 @@ const products: Product[] = [
 export const useGamesStore = defineStore({
   id: 'games',
   state: (): ProductState => ({
+    title: 'Games',
     products,
   }),
 
