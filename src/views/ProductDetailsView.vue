@@ -3,16 +3,17 @@ import '@/assets/content.css'
 import AppLink from '@/components/AppLink.vue'
 import type { Product } from '@/store/ProductType'
 import { onMounted, watch } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import Modal from './ModalView.vue'
 import { ref } from 'vue'
 import { getStoreByRouteParam } from '@/utils/GetStoreByRouteParam'
 
 const route = useRoute()
+const router = useRouter()
 const store = getStoreByRouteParam(route.params.productId.toString())
 const products = store.products
 const product: Product | undefined = products.find(({ id }) => id === route.params.productId)
-const showModal = ref(false)
+const showModal = ref(document.URL.includes('?privacy-policy'))
 const shortDescriptionText = ref<string>('')
 const longDescriptionText = ref<string>('')
 const privacyText = ref<string>('')
@@ -67,7 +68,7 @@ watch(
     <p>{{ longDescriptionText }}</p>
 
     <blockquote>
-      <AppLink to="#privacy-policy" id="show-modal" @click="showModal = true"
+      <AppLink to="?privacy-policy" id="show-modal" @click="showModal = true"
         >Privacy Policy</AppLink
       >
 

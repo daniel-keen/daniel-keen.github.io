@@ -8,10 +8,10 @@ const props = defineProps({
   <Transition name="modal">
     <dialog v-if="show" class="modal-mask">
       <article>
-        <a href="#" aria-label="Close" class="close" @click="$emit('close')"></a>
+        <a aria-label="Close" class="close" @click="$emit('close')"></a>
         <header>
-            <slot name="header">default header</slot>
-          </header>
+          <slot name="header">default header</slot>
+        </header>
         <div class="content">
           <div>
             <slot name="body">default body</slot>
@@ -36,8 +36,8 @@ const props = defineProps({
 }
 
 article {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .close {
