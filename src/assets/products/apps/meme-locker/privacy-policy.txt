@@ -1,0 +1,27 @@
+We respect your privacy and do not collect any personal information from you when you download or use Meme Locker mobile app (the "App").
+
+1. Information We Collect
+
+We do collect certain information to provide and improve our services, such as your email address.
+
+2. User Authentication
+
+We offer email, Google, and Apple sign-in options for user authentication. While email verification is not required, we encourage users to provide accurate information.
+
+3. Data Storage
+
+We utilize Firebase for data storage. We may store the content you upload to the app. We assure you that we do not access your content unless it is deemed dangerous or violates our content policies (e.g., explicit material), in which case we may delete the content and associated account without restoration.
+
+4. Third-Party Analytics
+
+We do not employ third-party analytics tools or software to collect information about your app usage.
+
+5. Children's Privacy
+
+We do not knowingly collect personal information from children under the age of 13. If we discover such information inadvertently, we will promptly delete it from our servers.
+
+6. Changes to this Privacy Policy
+
+We reserve the right to make changes to this Privacy Policy at any time. We will notify you of any changes by posting the revised Privacy Policy on our website or within the Game.
+
+If you have any questions or concerns about this Privacy Policy, please contact me at real.daniel.keen@gmail.com.

@@ -6,19 +6,19 @@ const props = defineProps({
 
 <template>
   <Transition name="modal">
-    <!-- <div v-if="show" class="modal-mask"> -->
     <dialog v-if="show" class="modal-mask">
       <article>
+        <a href="#" aria-label="Close" class="close" @click="$emit('close')"></a>
         <header>
-          <a href="#" aria-label="Close" class="close" @click="$emit('close')"></a>
-          <slot name="header">default header</slot>
-        </header>
-        <div>
-          <slot name="body">default body</slot>
+            <slot name="header">default header</slot>
+          </header>
+        <div class="content">
+          <div>
+            <slot name="body">default body</slot>
+          </div>
         </div>
       </article>
     </dialog>
-    <!-- </div> -->
   </Transition>
 </template>
 
@@ -33,6 +33,17 @@ const props = defineProps({
   background-color: transparent;
   display: flex;
   transition: opacity 0.3s ease;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+}
+
+.close {
+  display: flex;
+  position: absolute;
+  align-self: flex-end;
 }
 
 .modal-enter-from {

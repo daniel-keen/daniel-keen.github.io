@@ -1,6 +1,6 @@
 import { createPinia } from 'pinia';
 import {useGamesStore} from './modules/games';
-import { useAppsStore } from './modules/apps';
+import {useAppsStore} from './modules/apps';
 
 export const pinia = createPinia();
 

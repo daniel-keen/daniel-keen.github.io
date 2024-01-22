@@ -1,16 +1,16 @@
 <script setup lang="ts">
 import '@/assets/content.css'
 import List, { type ListItem } from '@/components/ListComponent.vue'
+import { useAppsStore } from '@/store'
 
-const items: ListItem[] = [
-  {
-    title: 'Meme Locker',
-    route: '/apps/meme-locker',
-    thumbnail: new URL('@/assets/images/apps/meme-locker/icon.png', import.meta.url).toString()
-  }
-]
+const apps = useAppsStore()
+const products: ListItem[] = apps.products.map((product) => ({
+  title: product.title,
+  route: `/apps/${product.id}`,
+  thumbnail: product.thumbnail
+}))
 </script>
 
 <template>
-  <List header="Apps" :items="items" />
+  <List header="Apps" :items="products" />
 </template>

@@ -1,5 +1,5 @@
 import AppsView from '@/views/AppsView.vue'
-import ItemDetailsView from '@/views/ItemDetailsView.vue'
+import ProductDetailsView from '@/views/ProductDetailsView.vue'
 
 export const appsRoutes = [
   {
@@ -8,9 +8,9 @@ export const appsRoutes = [
     component: AppsView,
   },
   {
-    path: '/apps/:appId',
+    path: '/apps/:productId',
     name: 'app-details',
-    component: ItemDetailsView,
+    component: ProductDetailsView,
     props: true,
   },
 ];

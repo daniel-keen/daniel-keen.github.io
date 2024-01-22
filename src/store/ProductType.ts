@@ -7,4 +7,5 @@ export interface Product {
     androidLink: string;
     privacyPolicy: string;
     thumbnail: string;
+    screenshots: string[];
   }
