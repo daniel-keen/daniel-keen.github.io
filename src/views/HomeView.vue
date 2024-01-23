@@ -9,7 +9,7 @@
           <li>
             <a
               target="_blank"
-              href="https://www.dropbox.com/scl/fi/a7yzpigzy431s3xk0h0uh/Daniel_Nadkin_CV.pdf?rlkey=va0ml8k3az4xgkxh351seqzpo&dl=0"
+              href="https://docs.google.com/document/d/1kzYFmiFS8Bggv10kPO77K8802h21M13YmrHoYIiUDFs"
               >Check out my CV</a
             >
           </li>
