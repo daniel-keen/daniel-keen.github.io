@@ -8,7 +8,7 @@ import LogoComponent from './components/LogoComponent.vue'
 <template>
   <main class="container">
     <header>
-      <nav>
+      <nav class="header">
         <LogoComponent />
         <NavMenu />
         <SocialLinks />
@@ -17,3 +17,11 @@ import LogoComponent from './components/LogoComponent.vue'
     <RouterView />
   </main>
 </template>
+
+<style scoped>
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2vw;
+}
+</style>

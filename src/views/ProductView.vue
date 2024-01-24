@@ -13,10 +13,17 @@ const router = useRouter()
 const store = getStoreByRouteParam(route.params.productId.toString())
 const products = store.products
 const product: Product | undefined = products.find(({ id }) => id === route.params.productId)
-const showModal = ref(document.URL.includes('?privacy-policy'))
+const showPrivacyPolicy = ref(document.URL.includes('?privacy-policy'))
+const selectedScreenshot = ref<string>('')
+const showScreenshot = ref(false)
 const shortDescriptionText = ref<string>('')
 const longDescriptionText = ref<string>('')
 const privacyText = ref<string>('')
+
+const openScreenshotModal = (screenshot: string): void => {
+  selectedScreenshot.value = screenshot
+  showScreenshot.value = true
+}
 
 const parseFile = async (filePath: string): Promise<string> => {
   try {
@@ -34,17 +41,36 @@ onMounted(async () => {
     longDescriptionText.value = await parseFile(product.longDescription)
     privacyText.value = await parseFile(product.privacyPolicy)
   }
+  if ([showPrivacyPolicy.value, showScreenshot.value].some((v) => v)) {
+    document.body.classList.add('stop-scrolling')
+    document.body.addEventListener('touchmove', preventScroll, { passive: false })
+  }
 })
 
+const preventScroll = (e: any) => {
+  e.preventDefault()
+}
+
 watch(
-  () => showModal.value,
+  () => showPrivacyPolicy.value,
   (newValue) => {
     if (newValue) {
       router.replace({ query: { 'privacy-policy': null } })
-      document.body.classList.add('stop-scrolling')
     } else {
       router.replace({ query: undefined })
+    }
+  }
+)
+
+watch(
+  () => [showPrivacyPolicy.value, showScreenshot.value],
+  (values) => {
+    if (values.some((v) => v)) {
+      document.body.classList.add('stop-scrolling')
+      document.body.addEventListener('touchmove', preventScroll, { passive: false })
+    } else {
       document.body.classList.remove('stop-scrolling')
+      document.body.removeEventListener('touchmove', preventScroll)
     }
   }
 )
@@ -53,14 +79,8 @@ watch(
 <template>
   <article>
     <header>
-      <nav aria-label="breadcrumb">
-        <ul>
-          <li>
-            <AppLink :to="router.options.history.state.back"> {{ store.title }}</AppLink>
-          </li>
-          <li>{{ product?.title }}</li>
-        </ul>
-      </nav>
+      <AppLink :to="router.options.history.state.back"> {{ store.title }}</AppLink>
+      / {{ product?.title }}
     </header>
     <hgroup>
       <h2>{{ product?.title }}</h2>
@@ -72,10 +92,10 @@ watch(
     <p>{{ longDescriptionText }}</p>
 
     <blockquote>
-      <AppLink to="" id="show-modal" @click="showModal = true">Privacy Policy</AppLink>
+      <AppLink to="" id="show-modal" @click="showPrivacyPolicy = true">Privacy Policy</AppLink>
 
       <Teleport to="body">
-        <modal :show="showModal" @close="showModal = false">
+        <modal :show="showPrivacyPolicy" @close="showPrivacyPolicy = false" :showHeader="true">
           <template #header> {{ product?.title }}: Privacy Policy </template>
           <template #body>
             <p style="white-space: pre-wrap">{{ privacyText }}</p>
@@ -85,7 +105,23 @@ watch(
     </blockquote>
 
     <div class="screenshots">
-      <img v-for="screenshot in product?.screenshots" :key="screenshot" :src="screenshot" />
+      <div style="flex"></div>
+      <img
+        v-for="screenshot in product?.screenshots"
+        :key="screenshot"
+        :src="screenshot"
+        @click="openScreenshotModal(screenshot)"
+        class="screenshot"
+      />
+
+      <Teleport to="body">
+        <modal :show="showScreenshot" @close="showScreenshot = false" :showHeader="false">
+          <template #body>
+            <img :src="selectedScreenshot" style="max-width: 80dvw; max-height: 80dvh" />
+          </template>
+        </modal>
+      </Teleport>
+      <div style="flex"></div>
     </div>
 
     <div class="store-buttons">

@@ -1,5 +1,5 @@
 import GamesView from '@/views/GamesView.vue'
-import ProductDetailsView from '@/views/ProductDetailsView.vue'
+import ProductView from '@/views/ProductView.vue'
 
 export const gamesRoutes = [
   {
@@ -10,7 +10,7 @@ export const gamesRoutes = [
   {
     path: '/games/:productId',
     name: 'game-details',
-    component: ProductDetailsView,
+    component: ProductView,
     props: true,
   },
 ];

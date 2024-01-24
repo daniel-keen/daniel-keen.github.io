@@ -19,17 +19,9 @@ const props = defineProps<ListProps>()
   <div class="grid">
     <article>
       <header>
-        <nav aria-label="breadcrumb">
-          <ul>
-            <li>{{ header }}</li>
-          </ul>
-        </nav>
+        {{ header }}
       </header>
-      <AppLink
-        v-for="item in props.items"
-        :key="item.route"
-        :to="{ path: item.route }"
-      >
+      <AppLink v-for="item in props.items" :key="item.route" :to="{ path: item.route }">
         <div class="item">
           <img class="thumbnail" :src="item.thumbnail" :alt="`${item.title} Thumbnail`" />
           {{ item.title }}

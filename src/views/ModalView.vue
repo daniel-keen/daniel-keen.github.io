@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const props = defineProps({
-  show: Boolean
+  show: Boolean,
+  showHeader: Boolean
 })
 </script>
 
@@ -9,7 +10,7 @@ const props = defineProps({
     <dialog v-if="show" class="modal-mask">
       <article>
         <button aria-label="Close" class="close" @click="$emit('close')"></button>
-        <header>
+        <header v-if="showHeader">
           <slot name="header">default header</slot>
         </header>
         <div class="content">

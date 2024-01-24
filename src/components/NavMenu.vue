@@ -38,3 +38,10 @@ const menuItems = [
     </AppLink>
   </div>
 </template>
+
+<style scoped>
+.menu {
+  display: flex;
+  margin-left: auto;
+}
+</style>

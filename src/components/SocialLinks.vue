@@ -10,7 +10,7 @@ const socialLinks = [
 </script>
 
 <template>
-  <ul>
+  <ul class="social-links">
     <li v-for="link in socialLinks" :key="link.href">
       <a target="_blank" rel="noopener noreferrer" :href="link.href">
         <font-awesome-icon :icon="link.icon" :size="link.size" />
@@ -18,3 +18,10 @@ const socialLinks = [
     </li>
   </ul>
 </template>
+
+<style scoped>
+.social-links {
+  display: flex;
+  margin-left: auto;
+}
+</style>

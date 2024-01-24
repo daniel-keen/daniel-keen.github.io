@@ -1,26 +1,32 @@
 .thumbnail {
-    width: 4em;
-    border-radius: 0.5em;
-    margin-right: 1em;
-    border-style: solid;
-    border-width: 1px;
-    border-color: var(--secondary);
+  width: 4em;
+  border-radius: 0.5em;
+  margin-right: 1em;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--secondary);
 }
 
 .screenshots {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 1.5em;
-    gap: 0.5em;
+  display: flex;
+  overflow-x: auto;
+  justify-content: space-between;
+  gap: 0.5em;
 }
 
-.screenshots img {
-    height: 15em;
+.screenshot {
+  cursor: pointer;
+  height: 15em;
+  margin-bottom: 0.9rem;
 }
 
 .store-buttons {
-    display: flex;
-    gap: 0.5em;
-    justify-content: center;
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5em;
+  justify-content: center;
+}
+
+.store-buttons a {
+  font-size: 0.9rem;
 }
