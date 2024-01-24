@@ -24,6 +24,9 @@ const props = defineProps({
 </template>
 
 <style scoped>
+article {
+  overflow-x: hidden;
+}
 .modal-mask {
   position: fixed;
   z-index: 9998;
