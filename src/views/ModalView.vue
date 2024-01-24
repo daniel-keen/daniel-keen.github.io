@@ -37,7 +37,7 @@ article {
   background-color: transparent;
   display: flex;
   transition: opacity 0.3s ease;
-  margin-top: 1dvh;
+  padding-top: env(safe-area-inset-top);
 }
 
 article {
