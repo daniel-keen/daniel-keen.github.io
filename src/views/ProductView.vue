@@ -43,7 +43,6 @@ onMounted(async () => {
   }
   if ([showPrivacyPolicy.value, showScreenshot.value].some((v) => v)) {
     document.body.classList.add('stop-scrolling')
-    document.body.addEventListener('touchmove', preventScroll, { passive: false })
   }
 })
 
@@ -67,10 +66,8 @@ watch(
   (values) => {
     if (values.some((v) => v)) {
       document.body.classList.add('stop-scrolling')
-      // document.body.addEventListener('touchmove', preventScroll, { passive: false })
     } else {
       document.body.classList.remove('stop-scrolling')
-      // document.body.removeEventListener('touchmove', preventScroll)
     }
   }
 )
