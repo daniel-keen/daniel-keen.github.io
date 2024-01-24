@@ -27,6 +27,9 @@ const props = defineProps({
 article {
   overflow-x: hidden;
 }
+dialog {
+  padding-top: 5dvh;
+}
 .modal-mask {
   position: fixed;
   z-index: 9998;
@@ -37,7 +40,6 @@ article {
   background-color: transparent;
   display: flex;
   transition: opacity 0.3s ease;
-  padding-top: env(safe-area-inset-top);
 }
 
 article {
