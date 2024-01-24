@@ -67,10 +67,10 @@ watch(
   (values) => {
     if (values.some((v) => v)) {
       document.body.classList.add('stop-scrolling')
-      document.body.addEventListener('touchmove', preventScroll, { passive: false })
+      // document.body.addEventListener('touchmove', preventScroll, { passive: false })
     } else {
       document.body.classList.remove('stop-scrolling')
-      document.body.removeEventListener('touchmove', preventScroll)
+      // document.body.removeEventListener('touchmove', preventScroll)
     }
   }
 )
