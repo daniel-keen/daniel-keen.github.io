@@ -1,8 +1,9 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import AboutView from '../views/AboutView.vue'
 import { gamesRoutes } from './gamesRoutes'
 import { appsRoutes } from './appsRoutes'
+import HomeView from '../views/HomeView.vue'
+import AboutView from '../views/AboutView.vue'
+import MusicView from '@/views/MusicView.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -14,6 +15,11 @@ const router = createRouter({
     },
     ...gamesRoutes,
     ...appsRoutes,
+    {
+      path: '/music',
+      name: 'music',
+      component: MusicView
+    },
     {
       path: '/about',
       name: 'about',
