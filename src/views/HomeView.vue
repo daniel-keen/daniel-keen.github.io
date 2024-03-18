@@ -21,7 +21,7 @@
         </p>
         <h6>Details</h6>
         <p>
-          I created this website myself using Vue.js, Pinia, and Pico.css. Feel free to check out
+          I created this website using Vue.js, Pinia, and Pico.css. Feel free to check out
           the things I've created. Additionally, you're welcome to contact me through your preferred
           means. Social links can be found in the top-right corner, and my email is located at the
           bottom of this page.
