@@ -2,7 +2,7 @@
 const size = 'lg'
 
 const socialLinks = [
-  { href: 'https://twitter.com/the_daniel_keen', icon: ['fab', 'twitter'], size },
+  // { href: 'https://twitter.com/the_daniel_keen', icon: ['fab', 'twitter'], size },
   { href: 'https://github.com/daniel-keen', icon: ['fab', 'github'], size: 'lg' },
   { href: 'https://www.linkedin.com/in/daniel-nadkin/', icon: ['fab', 'linkedin'], size },
   { href: 'https://www.instagram.com/the_daniel_keen/', icon: ['fab', 'instagram'], size }
