@@ -5,9 +5,8 @@ import { useGamesStore } from '@/store/index'
 
 const games = useGamesStore()
 const products: ListItem[] = games.products.map((product) => ({
-  title: product.title,
-  route: `/games/${product.id}`,
-  thumbnail: product.thumbnail
+  ...product,
+  route: `/games/${product.id}`
 }))
 </script>
 

@@ -5,9 +5,8 @@ import { useAppsStore } from '@/store'
 
 const apps = useAppsStore()
 const products: ListItem[] = apps.products.map((product) => ({
-  title: product.title,
-  route: `/apps/${product.id}`,
-  thumbnail: product.thumbnail
+  ...product,
+  route: `/apps/${product.id}`
 }))
 </script>
 

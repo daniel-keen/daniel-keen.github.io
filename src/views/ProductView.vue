@@ -122,10 +122,10 @@ watch(
     </div>
 
     <div class="store-buttons">
-      <AppLink to="" target="_blank" role="button" class="primary">
+      <a :href="product?.iosLink" target="_blank" role="button" class="primary">
         <font-awesome-icon class="store-button" :icon="['fab', 'app-store-ios']" /> App Store
-      </AppLink>
-      <a href="" target="_blank" role="button" class="primary">
+      </a>
+      <a :href="product?.androidLink" target="_blank" role="button" class="primary">
         <font-awesome-icon class="store-button" :icon="['fab', 'google-play']" /> Google Play
       </a>
     </div>
