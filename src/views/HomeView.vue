@@ -15,7 +15,7 @@
       <body>
         <h6>Bio</h6>
         <p>
-          Born in 1993 in Odesa, Ukraine, I've always been curious about the world. I enjoy learning
+          I've always been curious about the world. I enjoy learning
           new things about space, along with interests like musical composition, drawing,
           snowboarding, sci-fi novels, psychology, and philosophy.
         </p>
