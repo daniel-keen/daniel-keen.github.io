@@ -13,24 +13,29 @@
         >
       </header>
       <body>
-        <h6>Bio</h6>
+        <h6>About Me</h6>
         <p>
-          I've always been curious about the world. I enjoy learning
-          new things about space, along with interests like musical composition, drawing,
-          snowboarding, sci-fi novels, psychology, and philosophy.
+          I'm a passionate Unity developer with over 10 years of experience 
+          building apps and games across iOS, Android, Windows, and macOS. 
+          I've worked with companies and organizations on a wide range of 
+          projects—using Unity for games and React Native for mobile apps.
         </p>
-        <h6>Details</h6>
         <p>
-          I created this website using Vue.js, Pinia, and Pico.css. Feel free to check out
-          the things I've created. Additionally, you're welcome to contact me through your preferred
-          means. Social links can be found in the top-right corner, and my email is located at the
-          bottom of this page.
+          Outside of development, I enjoy drawing and composing music, 
+          with some of my tracks available on Spotify and other platforms. 
+          While those are hobbies, they feed into my creative process.
+        </p>
+        <p>
+          All of my work is crafted with care, attention to detail, 
+          and a love for building meaningful, well-designed experiences. 
+          I'm always open to collaboration—especially with people who share 
+          a passion for bringing fresh ideas to life.
         </p>
         <ul>
           <li>
             <a
               target="_blank"
-              href="https://docs.google.com/document/d/1kzYFmiFS8Bggv10kPO77K8802h21M13YmrHoYIiUDFs"
+              href="http://tiny.cc/danielkeen-cv"
               >Check out my CV</a
             >
           </li>
