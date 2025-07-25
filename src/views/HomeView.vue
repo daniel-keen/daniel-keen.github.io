@@ -42,7 +42,7 @@
         </ul>
       </body>
       <footer>
-        Contact me at <a href="mailto:real.daniel.keen@gmail.com">real.daniel.keen@gmail.com</a>
+        Contact me at <a href="mailto:daniel.nadkin@gmail.com">daniel.nadkin@gmail.com</a>
       </footer>
     </article>
   </main>
