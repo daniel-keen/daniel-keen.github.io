@@ -5,8 +5,13 @@ import { ref } from 'vue'
 
 const iconSize = ref('lg')
 const menuItems = [
-  { to: '/games', class: 'games', icon: ['fas', 'gamepad'], tooltip: 'Games', color: '#242424' },
-  { to: '/apps', class: 'apps', icon: ['fab', 'app-store-ios'], tooltip: 'Apps', color: '#242424' },
+  {
+    to: 'https://yellowduckgames.com',
+    class: 'yellowduck',
+    icon: ['fas', 'gamepad'],
+    tooltip: 'Games & Apps',
+    color: '#242424'
+  },
   {
     to: '/music',
     class: 'music',

@@ -24,20 +24,12 @@
   border-color: var(--contrast);
 }
 
-.games {
+.yellowduck {
   background-color: #ffba08;
 }
 
-.games:hover {
+.yellowduck:hover {
   box-shadow: 0 0 15px #ffba08bb;
-}
-
-.apps {
-  background-color: #ececec;
-}
-
-.apps:hover {
-  box-shadow: 0 0 15px #ecececbb;
 }
 
 .music {
