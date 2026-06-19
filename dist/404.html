@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Daniel Keen</title>
+    <!--
+      Single Page Apps for GitHub Pages
+      https://github.com/rafgraph/spa-github-pages
+      GitHub Pages serves this 404.html for any unknown path. We encode the
+      requested path into a query string and redirect to the app root, where
+      a snippet in index.html restores it before Vue Router boots.
+    -->
+    <script type="text/javascript">
+      var pathSegmentsToKeep = 0;
+
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
