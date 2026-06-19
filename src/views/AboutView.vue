@@ -28,7 +28,7 @@
         a passion for bringing fresh ideas to life.
       </p>
       <p style="margin-top: 24px">
-        <a class="btn" target="_blank" rel="noopener" href="http://tiny.cc/danielkeen-cv">
+        <a class="btn" target="_blank" rel="noopener" href="https://tiny.cc/danielkeen-cv">
           <font-awesome-icon :icon="['fas', 'file-lines']" /> Check out my CV
         </a>
       </p>
