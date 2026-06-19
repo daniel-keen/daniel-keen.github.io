@@ -1,0 +1,110 @@
+/* Shared visual language for the Ad Astra design — used across all sub-pages.
+   Loaded after Pico so these win where they overlap. */
+/* Pico ships `ul li { list-style: square }` — a value set on the <li> itself,
+   so a `list-style:none` on the parent <ul> never wins. These reset the <li>
+   directly (higher specificity than `ul li`) to kill the stray square markers
+   beside the social icons and music platform links. */
+.social-links li,
+.platforms li,
+.card ul li {
+  list-style: none;
+}
+
+:root {
+  --aur-ink: #eceef2;
+  --aur-muted: rgba(202, 207, 218, 0.72);
+  --aur-gold: #e6c879;
+  --aur-violet: #b98cff;
+  --aur-line: rgba(233, 234, 236, 0.14);
+  --aur-card: rgba(20, 13, 32, 0.55);
+}
+
+/* Page shell: centers a card over the fixed aurora background */
+.page {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 24px 96px;
+  color: var(--aur-ink);
+}
+
+.card {
+  width: 100%;
+  max-width: 660px;
+  margin-top: clamp(24px, 6vh, 64px);
+  padding: clamp(28px, 4vw, 48px);
+  /* Solid translucent panel (no backdrop-filter): blurring a position:fixed
+     backdrop triggers a Chromium "ghost at origin" artifact — a faint square in
+     the top-left corner. A subtle gradient keeps the glassy depth without it. */
+  background: linear-gradient(160deg, rgba(42, 27, 64, 0.66), rgba(16, 10, 26, 0.74));
+  border: 1px solid var(--aur-line);
+  border-radius: 18px;
+  box-shadow: 0 30px 70px -34px rgba(0, 0, 0, 0.75);
+}
+
+.card .eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--aur-gold);
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 14px;
+}
+.card .eyebrow:hover {
+  color: #fff;
+}
+
+.card h1 {
+  font-size: clamp(28px, 4vw, 38px);
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  margin: 0 0 20px;
+  color: var(--aur-ink);
+}
+
+.card p {
+  color: var(--aur-muted);
+  line-height: 1.65;
+  margin: 0 0 16px;
+}
+
+.card a:not(.eyebrow):not(.btn) {
+  color: var(--aur-violet);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(185, 140, 255, 0.4);
+}
+.card a:not(.eyebrow):not(.btn):hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.card .card-footer {
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid var(--aur-line);
+  font-size: 14px;
+  color: var(--aur-muted);
+}
+
+/* Pill button used for outbound links (CV, platforms) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--aur-line);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--aur-ink);
+  text-decoration: none;
+  font-size: 15px;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+}
+.btn:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.06);
+}
