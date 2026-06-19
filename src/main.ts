@@ -1,5 +1,6 @@
+import 'modern-normalize/modern-normalize.css'
+import './assets/base.css'
 import './assets/main.css'
-import '@picocss/pico'
 import './assets/aurora-theme.css'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 

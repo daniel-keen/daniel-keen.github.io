@@ -1,0 +1,122 @@
+/* Base layer — opinionated defaults on top of modern-normalize, replacing the
+   classless base Pico used to provide (body font/color, margin reset, link and
+   media defaults, focus ring, and the [data-tooltip] feature). */
+
+/* modern-normalize sets box-sizing:border-box already; restated for safety. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Strip the default margins Pico/the UA add to text + list elements. Components
+   set their own spacing; this also removes the li margin-bottom that previously
+   knocked the header icons off-center. */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd,
+ul,
+ol {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  /* fallback behind the fixed AuroraBackground layer (#05060a) so there is no
+     white flash before the canvas paints */
+  background-color: #05060a;
+  color: #e9eaec;
+  font-family: system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Media: block-level, never overflow their container */
+img,
+picture,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+/* Links are styled per context (nav, .latin, .card a, .btn); neutral by default
+   so nothing inherits a stray browser/Pico blue or the focus background box. */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Form controls inherit typography (no forms today, but future-proof) */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+/* Visible focus ring for keyboard users only — replaces Pico's blue focus box,
+   which appeared on plain mouse clicks. */
+:focus-visible {
+  outline: 2px solid rgba(185, 140, 255, 0.7);
+  outline-offset: 2px;
+}
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Tooltip — replaces Pico's [data-tooltip]. Used on the "Per Aspera Ad Astra"
+   link in the home/about hero. */
+[data-tooltip] {
+  position: relative;
+}
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  transform: translate(-50%, -4px);
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: rgba(20, 13, 32, 0.96);
+  border: 1px solid rgba(233, 234, 236, 0.16);
+  color: #eceef2;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.16s ease, transform 0.16s ease;
+  z-index: 20;
+}
+[data-tooltip]:hover::after,
+[data-tooltip]:focus-visible::after {
+  opacity: 1;
+  transform: translate(-50%, -8px);
+}

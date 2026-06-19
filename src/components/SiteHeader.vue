@@ -73,15 +73,28 @@ const navItems = [
   border-color: rgba(233, 234, 236, 0.6);
 }
 
+.header-socials {
+  display: flex;
+  align-items: center;
+}
 .header-socials :deep(.social-links) {
   display: flex;
+  align-items: center;
   gap: 16px;
   margin: 0;
-  padding: 0;
   list-style: none;
+}
+.header-socials :deep(.social-links li),
+.header-socials :deep(.social-links a) {
+  display: flex;
+  align-items: center;
 }
 .header-socials :deep(.social-links a) {
   color: rgba(170, 176, 190, 0.85);
+}
+/* block SVG removes FontAwesome's baseline offset so the icon centers on the row */
+.header-socials :deep(.social-links svg) {
+  display: block;
 }
 .header-socials :deep(.social-links a:hover) {
   color: #e6c879;
