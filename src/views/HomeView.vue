@@ -14,14 +14,6 @@ const navItems = [
 <template>
   <main class="hero">
     <img class="avatar" :src="avatar" alt="Daniel Keen" width="84" height="84" />
-    <a
-      class="latin"
-      href="https://simple.wikipedia.org/wiki/Per_aspera_ad_astra"
-      target="_blank"
-      rel="noopener"
-      data-tooltip="Through hardships to the stars"
-      >Per Aspera Ad Astra</a
-    >
     <h1>Daniel Keen</h1>
     <p class="lede">
       Unity developer, 10+ years. Apps and games across iOS, Android, Windows &amp; macOS. Music and
@@ -56,18 +48,6 @@ const navItems = [
   margin-bottom: 22px;
   border: 1px solid rgba(233, 234, 236, 0.35);
   box-shadow: 0 0 24px rgba(150, 60, 180, 0.45);
-}
-.latin {
-  font-size: 12px;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
-  color: rgba(236, 237, 240, 0.85);
-  text-decoration: none;
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.6);
-  margin-bottom: 18px;
-}
-.latin:hover {
-  color: #e6c879;
 }
 h1 {
   font-size: clamp(38px, 7vw, 68px);
