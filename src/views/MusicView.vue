@@ -8,11 +8,6 @@ type SocialMediaLink = {
 
 const socialMediaLinks: SocialMediaLink[] = [
   {
-    name: 'Spotify',
-    icon: ['fab', 'spotify'],
-    url: 'https://open.spotify.com/artist/3qe75mgWNfGDJZTrAy70CJ'
-  },
-  {
     name: 'YouTube',
     icon: ['fab', 'youtube'],
     url: 'https://www.youtube.com/@daniel_keen'
@@ -66,11 +61,6 @@ li {
   border-color: var(--contrast-hover);
   color: var(--contrast-hover);
   text-decoration: underline;
-}
-
-.spotify {
-  border-color: #1db954;
-  color: #1db954;
 }
 
 .youtube {

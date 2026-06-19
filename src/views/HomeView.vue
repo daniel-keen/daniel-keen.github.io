@@ -22,7 +22,7 @@
         </p>
         <p>
           Outside of development, I enjoy drawing and composing music, 
-          with some of my tracks available on Spotify and other platforms. 
+          with some of my tracks available on YouTube Music and other platforms. 
           While those are hobbies, they feed into my creative process.
         </p>
         <p>
